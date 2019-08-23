@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tinh chi so can nang cua co the</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>BMI</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <th>BMI < 18.5</th>
+        <th>Normal</th>
+    </tr>
+    <tr>
+        <th>18.5 <= BMI < 25.0</th>
+        <th>Overweight</th>
+    </tr>
+    <tr>
+        <th>25.0 <= BMI < 30.0</th>
+        <th>Underweight</th>
+    </tr>
+    <tr>
+        <th>30.0 <= BMI</th>
+        <th>Obese</th>
+    </tr>
+</table>
+Nhập vào cân nặng: <input type="text" id="weight" value="">
+<br>
+Nhập vào chiều cao: <input type="text" id="height" value="">
+<br>
+<button id="btnClick" onclick="phanLoai()">Xem BMI</button>
+<br>
+<p id="result">Result: </p>
+
+
+<script>
+    function phanLoai() {
+        let weight = document.getElementById("weight");
+        weight = parseInt(weight.value);
+        let height = document.getElementById("height");
+        height = parseInt(height.value);
+        let bmi = document.getElementById("result").innerHTML = weight / (height * height);
+        alert(bmi);
+        if (bmi < 18)
+            document.getElementById("result").innerHTML = "Underweight";
+        else if (bmi < 25.0)
+            document.getElementById("result").innerHTML = "Normal";
+        else if (bmi < 30.0)
+            document.getElementById("result").innerHTML = "Overweight";
+        else
+            document.getElementById("result").innerHTML = "Obese";
+    }
+</script>
+<!--    <script>-->
+<!--        let height = parseInt(prompt("Height: "));-->
+<!--        let weight = parseInt(prompt("Weight: "));-->
+<!--        let bmi =weight/(height*height);-->
+<!--        alert(bmi);-->
+
+<!--    </script>-->
+</body>
+</html>
